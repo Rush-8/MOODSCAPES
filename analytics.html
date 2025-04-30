@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodScape Analytics</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #d3f4c6;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+.logo h2 {
+    color: #2d9959; /* Green color for "MOODSCAPE" */
+}
+
+.navbar {
+    display: flex;
+    gap: 10px;
+}
+.navbar button {
+    background-color: #54b86e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.navbar button.active {
+    background-color: #2d9959;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    align-items: center;
+}
+.analytics-text {
+    width: 40%;
+    font-size: 18px;
+}
+.analytics-text h1 {
+    color: #2d9959; /* Green color for "ANALYTICS" */
+}
+.mood-chart {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 50%;
+}
+.goal-banner {
+    background-color: #f7e6e6;
+    padding: 15px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.goal-banner img {
+    height: 60px;
+}
+.goal-setting {
+    text-align: center;
+    margin-top: 20px;
+}
+.goal-setting input {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+.goal-setting button {
+    background-color: #54b86e;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/2.PNG" alt="MoodScape Logo">
+            <h2>MOODSCAPE</h2>
+        </div>
+        <div class="navbar">
+            <a href="log-mood.html"><button>LOG MOOD</button></a>
+            <a href="analytics.html"><button class="active">ANALYTICS</button></a>
+            <a href="community.html"><button>COMMUNITY</button></a>
+            <a href="recommendations.html"><button>RECOMMENDATIONS</button></a>
+            <a href="settings.html"><button>SETTINGS</button></a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="analytics-text">
+            <h1>ANALYTICS</h1>
+            <p>Discover fascinating trends about your mood. Are you a happy camper or grumpy cat?</p>
+            <img src="img/19.PNG" alt="Mood Icon" height="50">
+        </div>
+        <div class="mood-chart">
+            <h2>Mood Trends Over Time</h2>
+            <img src="img/20.png" alt="Mood Chart" width="100%">
+        </div>
+    </div>
+
+    <div class="goal-banner">
+        <img src="img/24.png" alt="Celebration">
+        <p>You have felt happy for 16 days this month! Notice how stress levels peak on Mondays!</p>
+    </div>
+
+    <div class="goal-setting">
+        <label for="goal">Set a Goal:</label>
+        <input type="text" id="goal" placeholder="Enter your goal">
+        <button>Set Goal</button>
+    </div>
+</body>
+</html>
