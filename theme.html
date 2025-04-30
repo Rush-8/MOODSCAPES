@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodScape - Virtual Mood Space</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3f4c6;
+            color: #2d9959;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar button {
+            background-color: #54b86e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .navbar button.active {
+            background-color: #2d9959;
+        }
+        
+        h1 {
+            color: #2d9959;
+        }
+
+        /* Mood Container */
+        .mood-container {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mood-box {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden; /* Ensures image stays within the box */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mood-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire mood box */
+            border-radius: 10px;
+        }
+
+        /* Mood Selection */
+        .mood-selection {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .mood-selection img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mood-selection img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Theme Color Selection */
+        .color-selection {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .color-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .color-box:hover {
+            transform: scale(1.2);
+        }
+
+        /* Music Button */
+        .music-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .music-btn:hover {
+            background-color: #e05650;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/2.PNG" alt="MoodScape Logo">
+            <h2>MoodScape</h2>
+        </div>
+        <div class="navbar">
+            <a href="log-mood.html"><button>LOG MOOD</button></a>
+            <a href="analytics.html"><button>ANALYTICS</button></a>
+            <a href="community.html"><button>COMMUNITY</button></a>
+            <a href="recommendations.html"><button>RECOMMENDATIONS</button></a>
+            <a href="settings.html"><button>SETTINGS</button></a>
+        </div>
+    </div>
+    
+    <h1>Virtual Mood Space</h1>
+
+    <div class="mood-container">
+        <div class="mood-box" id="moodBox">
+            <img src="img/21.jpg" alt="beach">
+        </div>
+    </div>
+
+    <div class="mood-selection">
+        <img src="img/11.jpg" alt="Fireplace Mood" onclick="changeMood('11.jpg')">
+        <img src="img/12.jpg" alt="Cozy Mood" onclick="changeMood('12.jpg')">
+        <img src="img/13.jpg" alt="Galaxy Mood" onclick="changeMood('13.jpg')">
+        <img src="img/14.jpeg" alt="Waterfall Mood" onclick="changeMood('14.jpeg')">
+    </div>
+
+    <h3>Change Theme Color</h3>
+<div class="color-selection">
+    <div class="color-box" style="background-color: #A8C5A8;" onclick="changeColor('#A8C5A8')"></div>
+    <div class="color-box" style="background-color: #C0E8D5;" onclick="changeColor('#C0E8D5')"></div>
+    <div class="color-box" style="background-color: #78A5A3;" onclick="changeColor('#78A5A3')"></div>
+    <div class="color-box" style="background-color: #EAE0C8;" onclick="changeColor('#EAE0C8')"></div>
+    <div class="color-box" style="background-color: #D8C3E5;" onclick="changeColor('#D8C3E5')"></div>
+</div>
+
+    <h3>Upload and Play Your Music</h3>
+<input type="file" id="musicFile" accept="audio/*">
+<button class="music-btn" onclick="playUploadedMusic()">Play Music 🎵</button>
+<audio id="uploadedMusic" controls style="display: none;"></audio>
+
+<script>
+	
+	 function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+	
+    function playUploadedMusic() {
+        const fileInput = document.getElementById("musicFile");
+        const audioPlayer = document.getElementById("uploadedMusic");
+
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const objectURL = URL.createObjectURL(file);
+            audioPlayer.src = objectURL;
+            audioPlayer.style.display = "block"; // Show audio controls
+            audioPlayer.play();
+        } else {
+            alert("Please upload a music file first!");
+        }
+    }
+</script>
+
+</body>
+</html>

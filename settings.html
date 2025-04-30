@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - MoodScape</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f4dc;
+            text-align: center;
+            margin: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar-left img {
+            width: 40px;
+            height: 40px;
+        }
+        .navbar-left h1 {
+            font-size: 24px;
+            color: #2d9959;
+        }
+        .navbar-right {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar button {
+            background-color: #54b86e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .navbar .active {
+            background-color: #35695c;
+        }
+        .premium-banner {
+            background-color: #333;
+            color: gold;
+            padding: 15px;
+            font-size: 24px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px auto;
+            width: 80%;
+        }
+        .settings-container {
+            width: 80%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .setting-item {
+            background: #78e0a1;
+            padding: 15px;
+            margin: 5px 0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .setting-item:hover {
+            background: #65c18c;
+        }
+        .setting-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="img/2.PNG" alt="MoodScape Logo">
+            <h1>MoodScape</h1>
+        </div>
+        <div class="navbar-right">
+            <a href="log-mood.html"><button>LOG MOOD</button></a>
+            <a href="analytics.html"><button>ANALYTICS</button></a>
+            <a href="community.html"><button>COMMUNITY</button></a>
+            <a href="recommendations.html"><button>RECOMMENDATIONS</button></a>
+            <a href="settings.html"><button class="active">SETTINGS</button></a>
+        </div>
+    </div>
+    
+    <div class="premium-banner">
+        <span>Upgrade to Premium</span>
+    </div>
+
+    <div class="settings-container">
+        <div class="setting-item">Daily Reminder <span>&#9654;</span></div>
+        <div class="setting-item">Passcode Lock <span>&#9654;</span></div>
+        <div class="setting-item">Backup & Restore <span>&#9654;</span></div>
+        <div class="setting-item">Watch Faces <span>&#9654;</span></div>
+        <a href="theme.html" class="setting-link">
+            <div class="setting-item">Theme <span>&#9654;</span></div>
+        </a>
+        <div class="setting-item">Widget <span>&#9654;</span></div>
+        <div class="setting-item">Emoticons <span>&#9654;</span></div>
+        <div class="setting-item">Manage Activities <span>&#9654;</span></div>
+        <div class="setting-item">Photo Gallery <span>&#9654;</span></div>
+        <div class="setting-item">Additional Settings <span>&#9654;</span></div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.setting-item').forEach(item => {
+            item.addEventListener('click', (event) => {
+                if (!event.currentTarget.closest('a')) { 
+                    alert(`Opening: ${item.innerText}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

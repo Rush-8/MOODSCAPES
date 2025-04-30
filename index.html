@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodScape</title>
+    <style>
+        body {
+            font-family: serif;
+            background-color: #d3f4c6;
+            color: #2d9959;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar button {
+            background-color: #54b86e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            height: calc(100vh - 100px);
+        }
+        .content {
+            text-align: center;
+            padding-left: 50px;
+        }
+        .content h1 {
+            font-size: 56px;
+            font-weight: bold;
+        }
+        .links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        /* Green link style */
+        .green-link-button {
+            background-color: #54b86e;
+            color: white;
+            text-decoration: none;  /* Removes underline */
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .illustration {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/2.PNG" alt="MoodScape Logo">
+            <h2>MOODSCAPE</h2>
+        </div>
+        <div class="navbar">
+            <a href="log-mood.html"><button>LOG MOOD</button></a>
+            <a href="analytics.html"><button>ANALYTICS</button></a>
+            <a href="community.html"><button>COMMUNITY</button></a>
+            <a href="recommendations.html"><button>RECOMMENDATIONS</button></a>
+            <a href="settings.html"><button>SETTINGS</button></a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="content">
+            <h1>Welcome to MoodScape<br>Track, Analyze, and<br>Enhance Your Mood</h1>
+            <div class="links">
+                <a href="log-mood.html" class="green-link-button">Log your mood</a>
+                <a href="analytics.html" class="green-link-button">View Trends</a>
+                <a href="recommendations.html" class="green-link-button">Explore Recommendations</a>
+            </div>
+        </div>
+        <div class="illustration">
+            <img src="img/1.PNG" alt="Illustration" height="400">
+        </div>
+    </div>
+</body>
+</html>

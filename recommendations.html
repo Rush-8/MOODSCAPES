@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodscape Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3f4c6;
+            color: #2d9959;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar button {
+            background-color: #54b86e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .navbar button.active {
+            background-color: #2d9959;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+        }
+        .recommendations {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .tag {
+            background: #6abf69;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .explore-button {
+            background: #5ca66d;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"> 
+            <img src="img/2.PNG" alt="Moodscape Logo">
+            <h1>MOODSCAPE</h1>
+        </div>
+        <div class="navbar">
+            <a href="log-mood.html"><button>LOG MOOD</button></a>
+    		<a href="analytics.html"><button>ANALYTICS</button></a>
+    		<a href="community.html"><button>COMMUNITY</button></a>
+    		<a href="recommendations.html"><button class="active">RECOMMENDATIONS</button></a>
+    		<a href="settings.html"><button>SETTINGS</button></a>
+        </div>
+    </header>
+    
+    <main>
+        <h2>RECOMMENDATIONS</h2>
+        <div class="recommendations">
+            <div class="card">
+                <img src="img/7.jpg" alt="Joy">
+                <span class="tag">Joy</span>
+                <p class="date">Jan 1, 2025</p>
+                <p class="description">Experience the joy of logging your mood with our interactive features</p>
+                <button class="explore-button">Explore Now</button>
+            </div>
+            <div class="card">
+                <img src="img/8.jpeg" alt="Trends">
+                <span class="tag">Trends</span>
+                <p class="date">Jan 2, 2025</p>
+                <p class="description">Explore your mood insights and uncover patterns you never knew existed before!</p>
+                <button class="explore-button">Explore Now</button>
+            </div>
+            <div class="card">
+                <img src="img/9.jpg" alt="Tips">
+                <span class="tag">Tips</span>
+                <p class="date">Jan 3, 2025</p>
+                <p class="description">Boost your spirits and light up your day with customized suggestions!</p>
+                <button class="explore-button">Explore Now</button>
+            </div>
+            <div class="card">
+                <img src="img/10.jpg" alt="Connect">
+                <span class="tag">Connect</span>
+                <p class="date">Jan 4, 2025</p>
+                <p class="description">Join our uplifting community, where your journey connects with understanding hearts!</p>
+                <button class="explore-button">Explore Now</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll('.explore-button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Exploring recommendations!');
+            });
+        });
+    </script>
+</body>
+</html>
+
